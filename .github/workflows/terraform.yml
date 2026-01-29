@@ -43,13 +43,13 @@ jobs:
           if [ "${{ github.event.inputs.action }}" = "destroy" ]; then
             terraform plan -destroy
           else
-            terraform plan
+            terraform plan -parallelism=20
           fi
 
       - name: Terraform Apply / Destroy
         run: |
           if [ "${{ github.event.inputs.action }}" = "destroy" ]; then
-            terraform destroy -auto-approve
+            terraform destroy -auto-approve -parallelism=20
           else
-            terraform apply -auto-approve
+            terraform apply -auto-approve -parallelism=20
           fi

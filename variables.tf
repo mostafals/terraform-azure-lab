@@ -62,7 +62,7 @@ variable "vm_size" {
 variable "admin_username" {
   type    = string
   default = "azureuser"
-  sensitive   = true
+  
 }
 
 variable "admin_password" {
