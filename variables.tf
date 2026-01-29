@@ -51,7 +51,7 @@ variable "allowed_ssh_source" {
 
 variable "vm_name" {
   type    = string
-  default = "vm-terraformlab"
+  default = "vm-terraformlabb"
 }
 
 variable "vm_size" {
