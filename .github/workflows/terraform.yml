@@ -3,7 +3,7 @@ name: Terraform Azure CI/CD
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   terraform:
