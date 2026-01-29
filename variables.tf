@@ -18,7 +18,7 @@ variable "tags" {
   type        = map(string)
   default = {
     project = "terraformlab"
-    owner   = "team-inrfraa"
+    owner   = "team-inrfvraa"
   }
 }
 
