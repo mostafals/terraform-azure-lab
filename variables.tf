@@ -1,47 +1,35 @@
-variable "project_name" {
-  description = "Nom du projet (utilisé dans les noms des ressources)"
-  type        = string
-  default     = "terraformla22"
-}
-
 variable "location" {
-  description = "Région Azure"
+  description = "Azure region"
   type        = string
   default     = "eastus"
 }
 
-
-# tags
-
-variable "tags" {
-  description = "Tags standards entreprise"
-  type        = map(string)
-  default = {
-    project = "terraformlab"
-    owner   = "team-infraa2"
-  }
+variable "resource_group_name" {
+  description = "Resource Group name"
+  type        = string
+  default     = "rg-terraformlab"
 }
 
-variable "vnet_cidr" {
-  description = "CIDR du Virtual Network"
+variable "vnet_name" {
+  description = "Virtual Network name"
   type        = string
-  default     = "10.10.0.0/16"
+  default     = "vnet-terraformlab"
 }
 
-variable "subnet_cidr" {
-  description = "CIDR du Subnet"
-  type        = string
-  default     = "10.10.1.0/24"
+variable "vnet_address_space" {
+  description = "VNET address space"
+  type        = list(string)
+  default     = ["10.10.0.0/16"]
 }
 
-variable "Subnet_mm" {
-  description = "Subnet"
+variable "subnet_name" {
+  description = "Subnet name"
   type        = string
-  default     = "subnet-default"
+  default     = "subnet-app"
 }
 
-variable "Vnet_mm" {
-  description = "Vnet"
-  type        = string
-  default     = "vnet"
+variable "subnet_address_prefixes" {
+  description = "Subnet CIDR"
+  type        = list(string)
+  default     = ["10.10.1.0/24"]
 }
