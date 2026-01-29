@@ -1,13 +1,13 @@
 variable "project_name" {
   description = "Nom du projet (utilisé dans les noms des ressources)"
   type        = string
-  default     = "terraformlab"
+  default     = "terraformla2"
 }
 
 variable "location" {
   description = "Région Azure"
   type        = string
-  default     = "francecentral"
+  default     = "eastus"
 }
 
 
