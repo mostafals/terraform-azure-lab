@@ -1,7 +1,7 @@
 variable "project_name" {
   description = "Nom du projet (utilisé dans les noms des ressources)"
   type        = string
-  default     = "terraformla2"
+  default     = "terraformla22"
 }
 
 variable "location" {
