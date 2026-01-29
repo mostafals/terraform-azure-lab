@@ -33,3 +33,17 @@ variable "subnet_address_prefixes" {
   type        = list(string)
   default     = ["10.10.1.0/24"]
 }
+
+
+# nsg 
+variable "nsg_name" {
+  description = "Network Security Group name"
+  type        = string
+  default     = "nsg-terraformlab"
+}
+
+variable "allowed_ssh_source" {
+  description = "Allowed source IP for SSH"
+  type        = string
+  default     = "0.0.0.0/0"
+}
