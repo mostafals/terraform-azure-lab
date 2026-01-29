@@ -14,3 +14,8 @@ output "subnet_id" {
 output "nsg_id" {
   value = azurerm_network_security_group.nsg.id
 }
+
+
+output "vm_private_ip" {
+  value = azurerm_network_interface.nic.private_ip_address
+}
