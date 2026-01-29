@@ -1,24 +1,23 @@
-# Resource Group
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-${var.project_name}"
-  location = var.location
-  tags     = var.tags
+  name     = "rg-terraformlab"
+  location = "eastus"
 }
 
-# Virtual Network
 resource "azurerm_virtual_network" "vnet" {
-  name                = "${var.Vnet_mm}-${var.project_name}"
-  location            = var.location
+  name                = "vnet-terraformlab"
+  location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  address_space       = [var.vnet_cidr]
-  tags                = var.tags
+  address_space       = ["10.10.0.0/16"]
+
+  tags = {
+    project = "terraformlab"
+    owner   = "team-infra"
+  }
 }
 
-# Subnet
 resource "azurerm_subnet" "subnet" {
-  name                 = var.Subnet_mm
+  name                 = "subnet-app"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = [var.subnet_cidr]
+  address_prefixes     = ["10.10.1.0/24"]
 }
-

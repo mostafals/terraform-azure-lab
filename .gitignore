@@ -15,3 +15,7 @@ Thumbs.db
 # yaml
 yaml-apply.yml
 yaml-destroy.yml
+
+
+outputs.tf
+variables.tf
