@@ -61,11 +61,11 @@ variable "vm_size" {
 
 variable "admin_username" {
   type    = string
-  default = "azureuse4"
+  default = "azureus5"
   
 }
 
-variable "ADMIN_PASSWORD" {
+variable "admin_password" {
   description = "Admin password for VM"
   type        = string
   sensitive   = true
