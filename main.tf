@@ -74,7 +74,8 @@ resource "azurerm_network_interface" "nic" {
   ip_configuration {
     name                          = "ipconfig1"
     subnet_id                     = azurerm_subnet.subnet.id
-    private_ip_address_allocation = "Dynamic"
+    private_ip_address_allocation = "Static"
+    public_ip_address_id          = azurerm_public_ip.pip.id
   }
 }
 
@@ -105,5 +106,20 @@ resource "azurerm_linux_virtual_machine" "vm" {
     offer     = "0001-com-ubuntu-server-jammy"
     sku       = "22_04-lts"
     version   = "latest"
+  }
+}
+
+#ip public
+
+resource "azurerm_public_ip" "pip" {
+  name                = "pip-terraformlab"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  allocation_method   = "Static"
+  sku                 = "Standard"
+
+  tags = {
+    project = "terraformlab"
   }
 }
