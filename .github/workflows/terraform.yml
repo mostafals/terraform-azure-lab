@@ -16,6 +16,11 @@ on:
           - apply
           - destroy
 
+# 🔒 Empêche les jobs Terraform en parallèle (ANTI STATE LOCK)
+concurrency:
+  group: terraform-state
+  cancel-in-progress: true
+
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -41,7 +46,7 @@ jobs:
       - name: Terraform Plan
         run: |
           if [ "${{ github.event.inputs.action }}" = "destroy" ]; then
-            terraform plan -destroy
+            terraform plan -destroy -parallelism=20
           else
             terraform plan -parallelism=20
           fi
