@@ -61,7 +61,7 @@ variable "vm_size" {
 
 variable "admin_username" {
   type    = string
-  default = "azureuse3"
+  default = "azureuse4"
   
 }
 
