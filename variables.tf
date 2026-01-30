@@ -68,6 +68,7 @@ variable "admin_username" {
 variable "admin_password" {
   description = "Admin password for VM"
   type        = string
+  default = "TerraformLab@2026="
   sensitive   = true
 }
 
