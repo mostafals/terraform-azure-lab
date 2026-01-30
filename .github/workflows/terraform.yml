@@ -33,6 +33,7 @@ jobs:
 
     # 🔑 FORCAGE EXPLICITE POUR TERRAFORM
       TF_VAR_admin_password: ${{ secrets.TF_VAR_admin_password }}
+      TF_VAR_admin_username: ${{ secrets.TF_VAR_admin_username }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
