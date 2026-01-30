@@ -65,10 +65,9 @@ variable "admin_username" {
   
 }
 
-variable "admin_password" {
+variable "ADMIN_PASSWORD" {
   description = "Admin password for VM"
   type        = string
-  default = "TerraformLab@2026="
   sensitive   = true
 }
 
