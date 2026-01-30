@@ -7,7 +7,7 @@ variable "location" {
 variable "resource_group_name" {
   description = "Resource Group name"
   type        = string
-  default     = "rg-terraform"
+  default     = "rg-terrafor"
 }
 
 variable "vnet_name" {
